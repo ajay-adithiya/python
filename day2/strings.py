@@ -42,3 +42,7 @@ print(C)
 # replace()
 replaced = item1.replace(products[0],"pen")
 print(replaced)
+
+# join()
+JL = ",".join(products)
+print(JL)
