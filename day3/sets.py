@@ -1,53 +1,76 @@
 products = set()
 price = set()
+
+# Product input
 while True:
-    items = input("enter the products :")
-    products.add(items)
+    item = input("Enter product : ")
+    products.add(item)
 
-    more = input("need another item ? yes/no :")
-    if(more == "no"):
+    more = input("Need another item ? yes/no : ")
+    if more == "no":
         break
-print("products are :",products)
 
-products.update(["face wash","brush"]) # update(
+print("Products :", products)
+
+# Update
+products.update(["face wash", "brush"])
 print(products)
 
-products.remove("soap") # remove()
+# Remove
+products.discard("soap")
 print(products)
 
-products.discard("soap") # discard()
-print(products)
+# Membership
+print("soap" in products)
 
-check = "soap" in products # membership opt
-print(check)
+# Price input
+while True:
+    p = input("Enter price : ")
+    price.add(p)
 
+    more = input("Any other price ? yes/no : ")
+    if more == "no":
+        break
+
+print("Prices :", price)
+
+# Union
+prod_price = products.union(price)
+print("Union :", prod_price)
+
+# Customer 1
+cust1 = set()
 
 while True:
-    prices = input("enter price of products : ")
-    more = input("any other item ? yes/no :")
-    if(more == "no"):
-        break
-print(price.add(prices))
-prod_price = products.union(price) # union()
-print(prod_price)
+    item = input("Enter Customer 1 product : ")
+    cust1.add(item)
 
-for item in products: # iteration
-    cust1 = input("enter cust1 products :")
-    more = input("need another item ? yes/no :")
-    if(more == "no"):
-        break
-    
-    cust2 = input("enter cust2 products :")
-    more = (input("need another item ? yes/no :"))
-    if(more == "no"):
+    more = input("Need another item ? yes/no : ")
+    if more == "no":
         break
 
-print(cust1)
-print(cust2)
+# Customer 2
+cust2 = set()
 
-# items = cust1.union(cust2) # union()
-# print(items)
+while True:
+    item = input("Enter Customer 2 product : ")
+    cust2.add(item)
 
-# common = cust1.intersection(cust2) # intersection()
-# print(common)
+    more = input("Need another item ? yes/no : ")
+    if more == "no":
+        break
 
+print("Customer 1 :", cust1)
+print("Customer 2 :", cust2)
+
+# Union
+all_products = cust1.union(cust2)
+print("All Products :", all_products)
+
+# Intersection
+common_products = cust1.intersection(cust2)
+print("Common Products :", common_products)
+
+# Difference
+print("Only Customer 1 :", cust1 - cust2)
+print("Only Customer 2 :", cust2 - cust1)
