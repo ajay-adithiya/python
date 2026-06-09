@@ -68,9 +68,12 @@ all_products = cust1.union(cust2)
 print("All Products :", all_products)
 
 # Intersection
-common_products = cust1.intersection(cust2)
+common_products = cust1.intersection(cust2)  # cust1 & cust2
 print("Common Products :", common_products)
 
 # Difference
-print("Only Customer 1 :", cust1 - cust2)
+print("Only Customer 1 :", cust1.difference(cust2))  # cust1 - cust2
 print("Only Customer 2 :", cust2 - cust1)
+
+# symmetric difference
+print("unique products :", cust1.symmetric_difference(cust2))  # cust1 ^ cust2
