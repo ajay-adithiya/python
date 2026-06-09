@@ -1,0 +1,4 @@
+prodcuts : price
+soap : 50
+shampoo : 90
+oil : 40
