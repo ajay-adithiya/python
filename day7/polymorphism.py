@@ -13,7 +13,7 @@ class CASH(payment):
 class CARD(payment):
     def pay(self,amount):
         print(f"{amount},paid using card")
-
+    
 paid = [UPI(),CASH(),CARD()]
 for pays in paid:
     pays.pay(500)
